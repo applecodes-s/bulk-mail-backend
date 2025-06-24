@@ -3,15 +3,16 @@ const nodemailer = require("nodemailer");
 const mongoose = require("mongoose");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const cors = require("cors");
 
 app.use(cors({
-  origin: "http://localhost:5173", // Your frontend port
+  origin: "https://bulk-mail-frontend-chi.vercel.app",
   methods: ["GET", "POST"],
   credentials: true,
 }));
+
 
 app.use(express.json());
 
